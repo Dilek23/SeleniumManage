@@ -56,13 +56,13 @@ public class C02_JunitAnnotations {
     public void afterEach(){
         System.out.println("Method sonrası kod blogu calıştı...");
     }
-    @BeforeClass
+    @BeforeClass// classın öncesindeki çalışacak objeye
     public  static void beforeAll(){
-        System.out.println("Method öncesi kod blogu calıştı...");
+        System.out.println("Method öncesindeki kod blogu calıştı...");
     }
     @AfterClass
     public static void afterAll(){
-        System.out.println("Method sonrası kod blogu calıştı...");
+        System.out.println("Method sonrasındaki kod blogu calıştı...");
     }
 
 }

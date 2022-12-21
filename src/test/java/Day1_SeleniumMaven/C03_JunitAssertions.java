@@ -35,6 +35,7 @@ public class C03_JunitAssertions {
 
    @After
    public void after(){
+
        driver.quit();
    }
 
@@ -44,19 +45,48 @@ public class C03_JunitAssertions {
        String currentUrl = driver.getCurrentUrl();
 
        // URL amazon kelimesini iceriyor mu kontrol saglaniyor
-       Assert.assertTrue("URL 'amazon' icermiyor", currentUrl.contains("Amazon"));
+       Assert.assertTrue("URL 'Amazon' icermiyor", currentUrl.contains("Amazon"));
+
    }
 
    @Test
    public void titleTest(){
        driver.get("https://www.amazon.com/");
        String title = driver.getTitle();
-       Assert.assertFalse(title.contains("Facebook"));
+       System.out.println(title);
+       Assert.assertFalse("Amazon kelimesi var...",title.contains("Amazon"));
 
    }
+   @Test
+      public void  URLnullTest(){
+   driver.get("https://www.amazon.com/");
+     String nullUrl= driver.getCurrentUrl();
+   Assert.  assertNull("Null içermiyor ", true);
+}
+@Test
+public void tİtleNotNullTest(){
+       driver.get("https://www.amazon.com/");
+    String titleNull = driver.getTitle();
+       Assert.assertNotNull("titleNull",false);
+}
 
-   //TO BE CONTINUED
+    @Test
+  public void  assertSameTest(){
+       driver.get("https://www.amazon.com/");
+        String Url= driver.getCurrentUrl();
+
+       Assert.assertSame("referanslar karşılaştırıldı",Url,Url);
 
 
 }
+@Test
+    public void  assertNotSameTest() {
+    driver.get("https://www.amazon.com/");
+    String url = driver.getCurrentUrl();
+  String url1= driver.getCurrentUrl();
+    Assert.assertNotSame("referanslar karşılaştırıldı", url, url1);
+
+}
+//TO BE CONTINUED...
+    }
 

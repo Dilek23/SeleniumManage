@@ -3,6 +3,7 @@ package Day1_SeleniumMaven;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class C01_WebDriverManagerTest {
     public static void main(String[] args) {
@@ -12,10 +13,10 @@ public class C01_WebDriverManagerTest {
 // Open google home page https://www.google.com/
 // Verify that you are Google in the title.
            //System... yerineEbDriver clasiini kullanarak chromedriver binary indirdik
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
 
         // Driver objemizi oluşturduk
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver=new FirefoxDriver();
 
         // window u maximize ettik
         driver.manage().window().maximize();
